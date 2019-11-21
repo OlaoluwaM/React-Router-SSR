@@ -10,11 +10,11 @@ const browserConfig = {
     publicPath: '/',
   },
   module: {
-    rules: [{ test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }],
+    rules: [{ test: /\.js$/, use: 'babel-loader' }],
   },
   plugins: [
     new webpack.DefinePlugin({
-      _isBrowser_: true,
+      __isBrowser__: 'true',
     }),
   ],
 };
@@ -33,7 +33,7 @@ const serverConfig = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      _isBrowser_: false,
+      __isBrowser__: 'false',
     }),
   ],
 };
